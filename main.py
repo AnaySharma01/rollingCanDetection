@@ -4,7 +4,7 @@ import ImageProcessing
 import ImageDisplaying
 
 #Loads the image
-file = "rollingCan3.mov"
+file = "rollingCan.mov"
 circle = ImageReading.readImage(file)
 
 
