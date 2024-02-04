@@ -1,6 +1,5 @@
 #Imports necessary packages
 import cv2 as cv
-import time
 
 #Imports function for reading images
 import ImageProcessing
@@ -15,14 +14,15 @@ def readImage(img):
 
     #Prevents program from crashing error
     try:
+        count = 0
         #While the video is playing, read the frame, process it & display it
         while videoIsPlaying == True:
             videoIsPlaying, frame = video.read()
-
             ImageProcessing.processImage(frame)
-            ImageDisplaying.displayImage(frame)
+            if count % 5 == 0:
+                ImageDisplaying.displayImage(frame)
+            count += 1
         cv.destroyAllWindows()
-
 
     #Prints message when video is done
     except: print("The video is done.")
