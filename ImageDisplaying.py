@@ -1,7 +1,7 @@
 #Imports necessary packages
 import cv2 as cv
 
-def displayImage(masked_image):
+def displayImage(image):
     #Returns the processed image
-    cv.imshow("circleWithDetection", masked_image)
+    cv.imshow("circleWithDetection", image)
     cv.waitKey(1)
