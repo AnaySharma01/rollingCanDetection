@@ -7,14 +7,14 @@ def processImage(image):
     median_blur = cv.medianBlur(image, 5)
     canny_image = cv.Canny(median_blur, 100, 100)
 
-    # Creates hough lines around image
+    # Creates hough circles around image
     circle = cv.HoughCircles(canny_image, cv.HOUGH_GRADIENT, 12, 2000,
                              param1 = 45, param2 = 45,
                              minRadius = 265, maxRadius = 270)
 
     #If the circle is detected, display them
     if circle is not None:
-        #Creates array of points around the circle using the hough lines
+        #Creates array of points around the circle using the hough circles
         circle_arr = np.uint16(np.round(circle))
         for point in circle_arr[0, :]:
             # Creates the circle around the image
