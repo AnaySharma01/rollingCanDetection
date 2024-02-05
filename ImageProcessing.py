@@ -9,9 +9,9 @@ def processImage(image):
     median_blur = cv.medianBlur(gray_scale, 5)
 
     # Creates hough circle around image
-    circle = cv.HoughCircles(median_blur, cv.HOUGH_GRADIENT, 12, 2000,
-                             param1 = 45, param2 = 45,
-                             minRadius = 265, maxRadius = 270)
+    circle = cv.HoughCircles(median_blur, cv.HOUGH_GRADIENT, 2, 1000,
+                             param1 = 140, param2 = 10,
+                             minRadius = 270, maxRadius = 270)
 
     #If the circle is detected, display them
     if circle is not None:
