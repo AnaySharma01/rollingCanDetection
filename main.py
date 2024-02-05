@@ -7,7 +7,6 @@ import ImageDisplaying
 file = "rollingCan.mov"
 circle = ImageReading.readImage(file)
 
-
 #Applies image detection
 ImageProcessing.processImage(circle)
 
